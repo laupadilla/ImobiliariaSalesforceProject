@@ -1,0 +1,54 @@
+<apex:page lightningStyleSheets="true" controller="ImobiliariaController">
+    
+    <style>
+        #conteudo{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-content: center;
+            margin: 200px auto;
+        }
+        .tam-form{
+	        min-width: 600px;
+        }
+        
+    </style>
+    
+    <div id="conteudo">
+        <apex:pageBlock title="Cadastrar Imóveis">
+            <apex:pageMessages id="showmessage"></apex:pageMessages>
+            
+            <div class="tam-form">
+                <apex:form >
+                    <apex:panelGrid columns="2">
+                        
+                        Quartos: <apex:inputText value="{!quartos}" />
+                        Banheiros: <apex:inputText value="{!banheiros}" />
+                        Sala: <apex:inputText value="{!salas}" />                        
+                        Cozinha: <apex:inputText value="{!cozinhas}" />
+                        Copa: <apex:inputText value="{!copas}" />
+                        Suite: <apex:inputText value="{!suites}" />
+                        Vagas de garagem: <apex:inputText value="{!vagas}" />
+                        Valor: <apex:inputText value="{!valor}" />
+                        
+                        Tipo do imóvel:
+                        <apex:selectList value="{!tipoImovel}" multiselect="false" size="1" required="true">                       
+                            <apex:selectOptions value="{!MinhasOpcoes}"></apex:selectOptions>
+                        </apex:selectList> 
+                      
+                    </apex:panelGrid>
+                    <apex:commandButton value="salvar" action="{!salvar}" />
+                    
+                    <!--div class="slds-form-element">
+                        <label class="slds-form-element__label" for="form-element-01">Quartos</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="form-element-01" placeholder="Placeholder text…" class="slds-input" />
+                        </div>
+                    </div-->
+                </apex:form>
+            </div>
+        </apex:pageBlock>
+    </div>
+</apex:page>

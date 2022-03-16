@@ -9,5 +9,9 @@
         <members>Imovel__c</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>Index_Imobiliaria_VFP</members>
+        <name>ApexPage</name>
+    </types>
     <version>52.0</version>
 </Package>
